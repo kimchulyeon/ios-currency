@@ -16,6 +16,8 @@
 		6EC0062A2990CFC900201981 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC006292990CFC900201981 /* ListViewController.swift */; };
 		6EC0062C2990EEDB00201981 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0062B2990EEDB00201981 /* TabbarController.swift */; };
 		6EC0062F2990F3BF00201981 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0062E2990F3BF00201981 /* CurrencyModel.swift */; };
+		6EC00636299217DB00201981 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC00634299217DB00201981 /* CurrencyTableViewCell.swift */; };
+		6EC00637299217DB00201981 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EC00635299217DB00201981 /* CurrencyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		6EC006292990CFC900201981 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6EC0062B2990EEDB00201981 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		6EC0062E2990F3BF00201981 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		6EC00634299217DB00201981 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		6EC00635299217DB00201981 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				6EC006202990CCF600201981 /* LaunchScreen.storyboard */,
 				6EC006232990CCF600201981 /* Info.plist */,
 				6EC0062B2990EEDB00201981 /* TabbarController.swift */,
+				6EC00634299217DB00201981 /* CurrencyTableViewCell.swift */,
+				6EC00635299217DB00201981 /* CurrencyTableViewCell.xib */,
 			);
 			path = "ios-currency";
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC00637299217DB00201981 /* CurrencyTableViewCell.xib in Resources */,
 				6EC006222990CCF600201981 /* LaunchScreen.storyboard in Resources */,
 				6EC0061F2990CCF600201981 /* Assets.xcassets in Resources */,
 				6EC0061D2990CCF500201981 /* Main.storyboard in Resources */,
@@ -155,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC00636299217DB00201981 /* CurrencyTableViewCell.swift in Sources */,
 				6EC0061A2990CCF500201981 /* PickerViewController.swift in Sources */,
 				6EC006162990CCF500201981 /* AppDelegate.swift in Sources */,
 				6EC0062F2990F3BF00201981 /* CurrencyModel.swift in Sources */,
