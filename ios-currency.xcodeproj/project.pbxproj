@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		6EC006162990CCF500201981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC006152990CCF500201981 /* AppDelegate.swift */; };
 		6EC006182990CCF500201981 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC006172990CCF500201981 /* SceneDelegate.swift */; };
-		6EC0061A2990CCF500201981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC006192990CCF500201981 /* ViewController.swift */; };
+		6EC0061A2990CCF500201981 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC006192990CCF500201981 /* PickerViewController.swift */; };
 		6EC0061D2990CCF500201981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC0061B2990CCF500201981 /* Main.storyboard */; };
 		6EC0061F2990CCF600201981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EC0061E2990CCF600201981 /* Assets.xcassets */; };
 		6EC006222990CCF600201981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EC006202990CCF600201981 /* LaunchScreen.storyboard */; };
+		6EC0062A2990CFC900201981 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC006292990CFC900201981 /* ListViewController.swift */; };
+		6EC0062C2990EEDB00201981 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0062B2990EEDB00201981 /* TabbarController.swift */; };
+		6EC0062F2990F3BF00201981 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0062E2990F3BF00201981 /* CurrencyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6EC006122990CCF500201981 /* ios-currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-currency.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EC006152990CCF500201981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EC006172990CCF500201981 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6EC006192990CCF500201981 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6EC006192990CCF500201981 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		6EC0061C2990CCF500201981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6EC0061E2990CCF600201981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EC006212990CCF600201981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EC006232990CCF600201981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EC006292990CFC900201981 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		6EC0062B2990EEDB00201981 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		6EC0062E2990F3BF00201981 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,26 @@
 		6EC006142990CCF500201981 /* ios-currency */ = {
 			isa = PBXGroup;
 			children = (
+				6EC0062D2990F3B100201981 /* Model */,
 				6EC006152990CCF500201981 /* AppDelegate.swift */,
 				6EC006172990CCF500201981 /* SceneDelegate.swift */,
-				6EC006192990CCF500201981 /* ViewController.swift */,
+				6EC006192990CCF500201981 /* PickerViewController.swift */,
+				6EC006292990CFC900201981 /* ListViewController.swift */,
 				6EC0061B2990CCF500201981 /* Main.storyboard */,
 				6EC0061E2990CCF600201981 /* Assets.xcassets */,
 				6EC006202990CCF600201981 /* LaunchScreen.storyboard */,
 				6EC006232990CCF600201981 /* Info.plist */,
+				6EC0062B2990EEDB00201981 /* TabbarController.swift */,
 			);
 			path = "ios-currency";
+			sourceTree = "<group>";
+		};
+		6EC0062D2990F3B100201981 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EC0062E2990F3BF00201981 /* CurrencyModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EC0061A2990CCF500201981 /* ViewController.swift in Sources */,
+				6EC0061A2990CCF500201981 /* PickerViewController.swift in Sources */,
 				6EC006162990CCF500201981 /* AppDelegate.swift in Sources */,
+				6EC0062F2990F3BF00201981 /* CurrencyModel.swift in Sources */,
 				6EC006182990CCF500201981 /* SceneDelegate.swift in Sources */,
+				6EC0062C2990EEDB00201981 /* TabbarController.swift in Sources */,
+				6EC0062A2990CFC900201981 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +315,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +323,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chul.ios-currency";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,6 +347,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +355,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chul.ios-currency";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
