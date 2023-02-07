@@ -48,13 +48,7 @@ class PickerViewController: UIViewController {
 		navigationItem.title = "currency picker page"
 	}
 	func fetchPickerItems() {
-		let urlString = "https://open.er-api.com/v6/latest/USD"
-		guard let url = URL(string: urlString) else { return }
-
-		// data Task
-		let task = URLSession.shared.dataTask(with: url) { [weak self] data, res, err in
-			guard let data = data else { return }
-			guard let currencyModel = try? JSONDecoder().decode(CurrencyModel.self, from: data) else { return }
+		CurrencyNetwork.fetchPickerItems { [weak self] currencyModel in
 			guard let RATES = currencyModel.rates else { return }
 
 			let rates = RATES.sorted(by: { dic1, dic2 in
@@ -65,12 +59,10 @@ class PickerViewController: UIViewController {
 
 			self?.pickerData = rates
 
-			DispatchQueue.main.async { [weak self] in
+			DispatchQueue.main.async {
 				self?.pickerView.reloadAllComponents()
 			}
 		}
-
-		task.resume()
 	}
 	func calculateCurrency() -> String {
 		let usdInputValue = Double(usdTextField.text ?? "") ?? 0

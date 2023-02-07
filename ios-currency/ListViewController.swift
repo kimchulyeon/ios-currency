@@ -13,21 +13,21 @@ class ListViewController: UIViewController {
 	@IBOutlet weak var usdTextField: UITextField!
 	@IBOutlet weak var currencyTableView: UITableView!
 
-	var pickerData: [(String, Double)]?
+	var pickerData: [[String: Double]]?
 	var usdTextFieldValue: Double? = 0
 
 
 	//MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+
 		usdTextField.delegate = self
 		currencyTableView.delegate = self
 		currencyTableView.dataSource = self
 
 		configNavigationItem()
 		registerTableViewCell()
-		fetchJson()
+		fetchPickerItems()
 	}
 
 	//MARK: - func ============================================
@@ -38,24 +38,22 @@ class ListViewController: UIViewController {
 		let cellNib = UINib(nibName: "CurrencyTableViewCell", bundle: nil)
 		currencyTableView.register(cellNib, forCellReuseIdentifier: "CurrencyTableViewCell")
 	}
-	func fetchJson() {
-		let urlString = "https://open.er-api.com/v6/latest/USD"
-		guard let url = URL(string: urlString) else { return }
+	func fetchPickerItems() {
+		CurrencyNetwork.fetchPickerItems { [weak self] currencyModel in
+			guard let RATES = currencyModel.rates else { return }
 
-		URLSession.shared.dataTask(with: url) { data, res, err in
-			guard let data = data else { return }
-
-			do {
-				let currencyModel = try JSONDecoder().decode(CurrencyModel.self, from: data)
-				self.pickerData = currencyModel.rates?.sorted { $0.key < $1.key }
-
-				DispatchQueue.main.async {
-					self.currencyTableView.reloadData()
-				}
-			} catch {
-				print(error)
+			let rates = RATES.sorted(by: { dic1, dic2 in
+				dic1.key < dic2.key
+			}).map { key, value in
+				[key: value]
 			}
-		}.resume()
+
+			self?.pickerData = rates
+
+			DispatchQueue.main.async {
+				self?.currencyTableView.reloadData()
+			}
+		}
 	}
 }
 
@@ -64,7 +62,7 @@ class ListViewController: UIViewController {
 extension ListViewController: UITextFieldDelegate {
 	func textFieldDidChangeSelection(_ textField: UITextField) {
 		usdTextFieldValue = Double(textField.text ?? "")
-		
+
 		currencyTableView.reloadData()
 	}
 }
@@ -77,12 +75,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyTableViewCell", for: indexPath) as? CurrencyTableViewCell else { return UITableViewCell() }
-		cell.leftLabel.text = self.pickerData?[indexPath.row].0
-		
-		let changedValue = (self.pickerData?[indexPath.row].1 ?? 0) * (usdTextFieldValue ?? 0)
-		
-//		cell.rightLabel.text = self.pickerData?[indexPath.row].1.description
+		guard let keys = pickerData?[indexPath.row].keys else { return UITableViewCell() }
+		guard let values = pickerData?[indexPath.row].values else { return UITableViewCell() }
+
+		cell.leftLabel.text = Array(keys)[0]
+		let changedValue = Array(values)[0] * (usdTextFieldValue ?? 0)
 		cell.rightLabel.text = String(format: "%.2f", changedValue)
+
 		return cell
 	}
 }
